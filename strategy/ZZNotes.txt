@@ -1,0 +1,3 @@
+This design pattern is used when we might need to implement the same functionality for multiple classes.
+In this case, we use the strategy pattern -> create a Strategy -> Create different implementations of this strategy ->
+Use these implementations in the classes.
