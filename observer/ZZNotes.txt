@@ -21,3 +21,17 @@ ObservableI observable
 We can use this observable to get the data. In this case we use the getProductName of the observable.
 Overrides the functions
 
+
+Push-based method -> here observable sends all the required information in the update method of the observer.
+Pros : all the data is send in the updateObservers function. Means that we get the correct data
+Cons : Tight coupling, as the function signature cannot be used in multiple places.
+ex : updateObservers(productName)
+
+Pull-based method -> here we do not send the data in the update method, instead the observer pulls the data from the 
+observable class
+Pros : No tight coupling
+Cons : The data might not have updated while fetching. Need to apply proper sync and stuff like that to get the correct data.
+ex : updateObservers(){
+    productName = observable.getProductName();
+} 
+
