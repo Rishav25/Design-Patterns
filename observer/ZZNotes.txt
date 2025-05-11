@@ -1,0 +1,23 @@
+This is the observer design pattern. Most helpful in notifying people one a state has changed
+
+ObservableI
+add(ObserverI) -> adds Observer to the observer List.
+remove(ObserverI) -> removes Observer from observer list.
+notifyObservers() -> calls the update for all the observers in the observerList.
+setData() -> this function is used to set the data based on which notifyObservers() is called.
+
+ObservableC implements ObservableI
+List <ObserverI> obsList = new ArrayList<>();
+some data parameter
+Overrides the functions
+
+
+
+ObserverI
+updateObserver() -> this has the business logic as to what needs to happen the observable has changed it's state
+
+ObserverC implements ObserverI
+ObservableI observable
+We can use this observable to get the data. In this case we use the getProductName of the observable.
+Overrides the functions
+
