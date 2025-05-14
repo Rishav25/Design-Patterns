@@ -1,0 +1,11 @@
+Used when we need to create objects based on some conditions.
+If there is a large codebase, and objects need to be created conditionally, then we need to write the conditional
+logic in all places where the object will be created.
+Instead we use the factory pattern, where we write the logic only in the factory and use the factory to create 
+various shapes
+
+Shape Interface -> used by different concrete classes
+Shape Factory -> has a function called createShape which creates the concrete shapes
+
+as a thumb rule in SOLID -> D -> Dependency Inversion. Always create the object in the highest level, as in,
+in the parent level. and create the child object using different params.

@@ -1,0 +1,11 @@
+This is a 2 layer factory model.
+
+We have a superFactory which will create a vehicle object using a factory object.
+Each of these factories are then just like the normal factory.
+
+Here, we create the objects using the superFactory by passing appropriate params, 
+the params should identify which factory to use, and which object to create
+
+helps us maintain code in better way in cases when a single factory might be handling huge number of object creations.
+We can then divide the factory into 2 parts and use a super factory to create the object using the individual 
+factories

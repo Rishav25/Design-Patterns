@@ -1,0 +1,19 @@
+Decorator design pattern is used when we need to add toppings or constant modifications to an object.
+
+Here we use 2 abstract classes:
+1. Base -> abstract cost()
+2. Decorator extends Base. 
+Since Decorator extends Base so Decorator IS-A Base
+
+We create concrete classes from Base and override the cost function
+
+We create concrete classes from Decorator which HAS-A Base too. So, the key here is that the Decorators both
+IS-A and HAS-A Base. 
+Constructor(Base b)
+    this.base = b;
+cost(){
+    return this.base.cost() + costOfDecorator;
+}
+
+in the main class we create a basePizza and we simply re-assign it with the topping constructor.
+Later when we call the final base, it recursively calculates all the costs and gives us the total cost.
