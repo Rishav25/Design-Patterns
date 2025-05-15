@@ -1,0 +1,23 @@
+This is used in cases where the client needs to fulfill a request and does not care who takes care of the request.
+This is used to make ATM, Vending Machines and Loggers
+
+SuperClass -> also HAS A public static int LEVEL1, LEVEL2 and so on
+HAS A nextReceiver, constructor(nextReceiver), 
+action(level, message){
+    if(nextReceiver)    nextReceiver.action(level, message);
+}
+this is used to create the chains. and in this log, we call the next receiver in line.
+
+Concrete Class -> constructor(nextReceiver) uses superClass constructor
+action(level, message) -> if level matches that of class, then we perform business logic, else we
+send it to the super.log(), which is effectively, going to the next one
+
+On the client side, in our case -> Main.java
+We create like this
+SuperClass superObj = new ConcClass1(new ConcClass2 (new ConcClass3 (null)))
+in this way we chain the classes together.
+
+Here, the main thing is -> the constructor is created using the nextReceiver
+every concrete class will have it's own nextReceiver.
+if the action of the concrete class can be fulfilled, then we do so, if not, we call the action of the super class
+this action is responsible to send the execution to the next step.

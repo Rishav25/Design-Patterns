@@ -1,0 +1,14 @@
+This is a very important design pattern.
+This is used as a control before or after the client request is performed.
+Used in Access Restriction, Checking Cache, Pre Processing
+
+Here, we have an abstract class/ interface which has functions.
+These functions are implemented by the concrete class
+the proxy class implements the pre processing and then it sends the control to the concrete class, if it has to send it there
+
+in the client, here Main.java, we create a ProxyClass Object and we call the functions from that proxy Object
+
+We can use Proxy and Decorator pattern in combination to create multiple proxy layers for a request.
+
+Simple -> call proxy from client. 
+proxy sends the request to the concrete class after performing it's own operations.
