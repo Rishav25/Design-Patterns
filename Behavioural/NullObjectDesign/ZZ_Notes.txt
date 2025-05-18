@@ -1,0 +1,5 @@
+This design pattern is used in combination with Factory Design pattern.
+We use this to handle nulls gracefully.
+without this pattern, at each step we would have to do this if(obj != null), then perform actions on obj
+
+Here, we create a NullObject class along with the other elements and in the default behaviour of the factory, we create this NullObject.

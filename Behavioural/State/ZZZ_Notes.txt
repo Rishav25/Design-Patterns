@@ -1,0 +1,15 @@
+We use this design pattern in situations when we can perform certain functionalities at each state
+i.e. if we have a TV or a Vending Machine
+based on the current state -> Off/On, Idle/Product Selection/Has Cash/Dispense Product
+each state will have only a set of functionalities which it can perform.
+
+In such a case, we create a state interface -> the concrete state objects will implement only the functions which are valid for that state. For all the other functions we will use default behaviour or throw exceptions.
+
+The product object HAS-A state object and we change the state object based on the actions of the state.
+
+Note one thing -> Here, all functions must have the product as their parameter, this is going to ensure seamless transition of states.
+
+Product -> constructor with first state, getter and setter for the states
+States -> implements the functions and the ones it does not have to, throws error for those
+
+Here, we can make our own changes so that we don't need to getState everytime.
