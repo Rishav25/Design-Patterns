@@ -1,0 +1,14 @@
+This is used when we have a tree like object.
+
+If we want to call the same function for each object, we should not have to check the instanceOf the object and make the call, instead we should be able to do it based on the object only
+
+Ex : File System
+Directory contains files and directories
+an ls on them will be the challenge.
+
+So, we create an interface and we create the file and the Directory out of that interface.
+
+We can play around with the functions to add children.
+
+Main use is -> use one common function for all the children by using an interface and not using the isntanceOf thing for different child objects
+in this case -> Directory and file.

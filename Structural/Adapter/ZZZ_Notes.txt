@@ -1,0 +1,6 @@
+This patter is used when the request or the response of an interface has to be changed to fit into a new model or a new UI based on whether it is the request or the response.
+
+the technique is to create a adapterInterface and use implement this adapterInterface in the concreteAdapterClass
+the concreteAdapterClass HAS-A adaptee (existing implementation). We use this adaptee to get the old data and use our business logic to convert it to new data
+
+in the client, we create a adapterInterface using the adaptee (existing implementation) and we call the adapterInterface's getFunction.
