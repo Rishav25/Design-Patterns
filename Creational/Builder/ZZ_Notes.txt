@@ -1,0 +1,17 @@
+This is a design pattern which is used when there are multiple optional params in the class.
+In such a case, we might need to create multiple constructors to fit all the combinations,
+but instead we use a ObjectBuilder to build the object.
+
+1. Here Object HAS-A ObjectBuilder passed in it's constructor.
+
+2.  ObjectBuilder abstract class which is inherited by different types of objectBuilders.
+    
+    The ObjectBuilder has setFunctions for all the params of the object and these setFunctions return the ObjectBuilder object itself.
+    
+    At last there is a build function which invokes the constructor of the object -> like this object(this)
+
+3.  There is a Director class which handles the creation of an object. Here, we use a simple instanceOf to determine which concrete ObjectBuilder class will have to be used. Then we return a new ObjectBuilder like this -> objBuilder.setparam1(10).setparam2(13).setparam3(19).build()
+
+4. Client creates the Director and passes a concrete builder class in it.
+
+Tough one and long one. Needs some revision.

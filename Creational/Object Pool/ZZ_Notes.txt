@@ -1,0 +1,12 @@
+We use this design pattern when we create an object out of a pool of objects.
+Ex : A DB Connection. We get this connections from a pool, use it then release it.
+
+We have 2 things here
+
+1. Pool Manager -> A singleton class which needs to be made thread safe. Has 4 params -> int INTIAL_RESOURCE_COUNT, int MAX_RESOURCE_COUNT, List inUseResources, List availableResources
+
+This also needs to be made thread safe by using synchronized keyword.
+This is singleton, so we need a static instanceOf method which will create the pool manager by a double locking. Better understood in code.
+
+2. Resource -> simple object with a constructor. In this class, we have an empty constructor which creates an object using the Pool only. So in it's creation we call the get function of the pool manager.
+You might choose to extend it from a base class.
