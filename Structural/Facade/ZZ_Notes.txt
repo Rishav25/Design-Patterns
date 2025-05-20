@@ -1,0 +1,21 @@
+This design pattern is used to hide the business logic complexities from the client.
+
+It is used in 2 ways -> 
+1. Limiting the functionality of the client. Useful in cases when some APIs have a high call frequency and can be managed by not calling the other APIs.
+2. Aggregating the APIS of the complex system inside a function which can be called from the client.
+
+Design:
+
+Client -> Facade HAS-A -> system
+
+In the facade we construct all the objects required by the system.
+Simple design pattern.
+
+It is different to proxy and adapter patterns.
+Proxy is linked to one object only and it is used at the unit level. For a single object. (Facade used for entire service/system)
+Adapter is used for compatibility purposes. It is not used as an abstraction layer.
+
+In design patterns, some implementations might seem the same, but the key here is the intent. 
+Facade intent : Hide complexities
+Proxy : Require client to go through a layer before entering the service.
+Adapter : Used to make the client request compatible to the server.

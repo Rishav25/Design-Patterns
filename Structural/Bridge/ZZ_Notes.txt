@@ -1,0 +1,19 @@
+This is very similar to strategy.
+We use a interface to define the functions and we use this interface in an abstract class.
+this abstract class is used by many concrete classes.
+
+It is useful in decoupling the abstract class and the implementations. It decouples the code and we can use the same functionality in different concrete classes.
+Both can expand in their own way without having any coupling of functionalities.
+
+Client -> HAS A -> Abstract class -> HAS A implementor
+The implementor might be implemented by several concrete classes.
+We can initialize any one of the concrete implementors in the constructor of the abstract class
+
+It is same as strategy.
+
+Difference is again about the intent.
+In strategy we were trying to perform different behaviours with the same object so it was more of changing the functionality
+
+Bridge is more about initialization. It declares the functionality while creating the object by linking the abstract class and the interface.
+
+Use this to individually implement functionalities from a interface and use them on an abstract class which in turn is extended by several other classes.
