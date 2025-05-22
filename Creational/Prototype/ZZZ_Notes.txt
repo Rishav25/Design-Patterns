@@ -1,0 +1,4 @@
+This design pattern is used to create clones of object from within the object itself. 
+If we need to create similar object for a class, instead of writing the constructor logic again, we need to use a clone() method in the class which will return a new instance of a class.
+
+Very easy and intuitive pattern.
