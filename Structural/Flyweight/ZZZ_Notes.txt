@@ -1,0 +1,14 @@
+This design pattern is used when we need to design memory intensive applications. Uses concepts of caching and extrinsic and intrinsic data to solve the memory problem.
+
+Steps :
+
+1. Identify the params of a object which do not change often -> intrinsic params
+2. The other params will be extrinsic
+3. Create a class with the intrinsic params and use them to initialize the class.
+4. For the extrinsic values, use them in methods.
+5. Next, we create a factory for these objects with a HashMap which will have a cache of the Intrinsic data.
+
+In the client, here main -> we create an object using the factory (will check in cache to check if the intrinsic value exists or not) -> once we get the objectI using the factory, we call the function which will use the extrinsic values from the client.
+
+In the example, we assume that we have one factory which is generating all characters of fixed font and size. From there, based on the character, we are returning the letterInterface. On top of this letter, we can actually perform the printLetter function of the Letter object.
+We use Interface since it is not necessary that we will always return the same Letter child. Depending on business logic we might need to return some other child class.
