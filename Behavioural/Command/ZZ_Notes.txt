@@ -1,0 +1,15 @@
+We use this design pattern when we have to pass a command to an object. These are helpful in undo redo operations too.
+
+Here we have 3 things:
+1. Invoker
+2. Commands
+3. Receiver
+
+The client uses the Invoker, the Invoker Commands the Receiver.
+
+We have an Invoker which HAS A Command, Command HAS A Receiver. i.e. the Command Constructor will have the AC Object in it.
+The Concrete Command has an execute function which is called by the Invoker.
+
+Client HAS A Invoker and HAS A Receiver.
+
+For the Undo-Redo we can use Stack inside the Invoker.
