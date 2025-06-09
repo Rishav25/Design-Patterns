@@ -1,0 +1,15 @@
+This design pattern is used to iterate over elements without explicitly knowing about which data structure has been used.
+
+Ex : Set<Integer> mySet = new LinkedHashSet<>();
+
+now if we create an iterator for this mySet, the iterator can simply perform the next() and hasNext() operations without worrying about the underlying data structure.
+
+
+Mainly 2 parts -> Iterator, Aggregator.
+
+Client interacts with the Aggregator and the Aggregator has the power to create the iterator.
+This Iterator is a generic Iterator.
+
+Simple Design Pattern which is used to iterate over elements.
+Next() -> gives the current element.
+hasNext() -> gives information if there is a next element.
