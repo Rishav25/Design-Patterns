@@ -1,0 +1,11 @@
+Mediator design pattern is used when different instances of an object need not talk to each other to pass information among themselves.
+In this case, a mediator is created through which all the objects communicate with each other.
+
+Ex : Online Auction System where people are placing bids for a object.
+
+Code:
+Mediator Interface -> sendMessage() ---Function which describes how the colleague/bidder will communicate with the mediator. Inside the send message we call the receiveMessage of the colleague--
+Concrete Mediator -> HAS List of Concrete Colleagues and in it's sendMessage() we send the information via the system to all the colleagues 
+
+Colleague Interface -> sendMessage() --- Function for single colleague , calls the sendMessage() of the mediator ---
+receiveMessage() -> how the colleague will receive a message from the mediator
