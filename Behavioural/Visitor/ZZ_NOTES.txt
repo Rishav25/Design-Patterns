@@ -1,0 +1,21 @@
+This design pattern is used when we need to add multiple operations to a concreteObject. Example, there is a hotelRoom and we need to perform multiple operations on it. Now, if we need to add new operations, we would have to add functions to the same class and it would be a vertical addition. We avoid vertical addition in coding, instead use horizontal extension.
+
+The way to go about is:
+Element is the actual object on which operation has to be performed.
+Visitor is the function of that object.
+
+IElement -> we create concreteElements out of this interface.
+This interface will have a function accept(IVisitor)
+The IVisitor object tells us which Visitor/operation we will perform on the instance of our concrete object
+
+IVisitor -> Has visit(ConcreteElement) function. It has this function for all the concrete elements. 
+The concreteVisitors are actual implementation for each of the concreteElements.
+
+This uses the concept of double dispatch, i.e. to select which function to call, it uses 2 objects. 
+One object is the object from which the function is called and the other is passed in the parameter of the function call.
+We use function overloading here to determine the function which has to be called.
+
+This is different from Strategy Pattern since the strategy pattern is mainly focussed on changing algorithms but this one is responsible for extension and separating the operations from the class.
+
+
+The good thing is, we create one instance of a visitorObject, i.e. one instance of an operation . And we can use the same instance to perform operations on multiple different concreteElements/Object
