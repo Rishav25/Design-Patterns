@@ -1,0 +1,6 @@
+Very simple design pattern.
+
+This provides the steps which need to be followed to execute a function.
+Ex a function performs 3 steps. Each of these steps is represented in a separate function.
+
+A class might not know the order in which these steps have to be followed. In that case we use the template method. We only define the order of execution of the steps here. The steps are implemented individually by the child classes. The executeAllSteps function is a final function which prevents the child classes from overriding it.
