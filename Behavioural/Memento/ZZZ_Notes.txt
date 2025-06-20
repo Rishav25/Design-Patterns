@@ -1,0 +1,11 @@
+This design pattern is used to store the snapshot of an instance. i.e. it is very helpful in case of undo operations in a system.
+
+Has 3 parts : Originator -> The object whose state needs to be maintained, Memento -> The object which is responsible for storing the memento, Caretaker -> The object which keeps a Stack/List of mementos and returns the memento
+
+The originator has 2 main functions -> createMemento -> Calls the memento constructor
+restoreMemento -> restores the object returned by the undo operation of the Caretaker
+
+Caretaker -> addMemento() -> adds the element to a Stack
+undo() -> returns the top element of the Stack
+
+memento -> simple object with getter and setter methods.
