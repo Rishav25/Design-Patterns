@@ -1,0 +1,10 @@
+This design pattern is mostly used when we need to perform operation/interpret 2 terminal expressions based on a context.
+
+Ex : a,b is given and we want to perform one of the basic mathematical operations on it. We need to pass the value of a and b and also the operation that we want to perform in the context.
+This context will be an object which contains a map and contains ample information so that we can determine what to do with a and b.
+
+uses 3 things -> interpreter Interface -> used by Terminal Expression and Non Terminal Expression.
+
+Terminal expression cannot be further broken down.
+
+Here recursion is used to break the nonterminal expression down into terminal expression and the recursive call stack then computes the value based on the operation we have given to the binaryExpression.
